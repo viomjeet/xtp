@@ -1,0 +1,250 @@
+@import './style/fonts';
+@import './style/config';
+
+
+body {
+  background: $darkgray !important;
+  color     : $white !important;
+}
+
+.headerTitle {
+  background   : $lightblack;
+  color        : $white;
+  padding      : 10px 0;
+  margin-bottom: 1rem;
+
+  h4 {
+    font-weight   : 300;
+    font-size     : 20px;
+    text-transform: uppercase;
+    margin        : 0px;
+    color         : $gray;
+
+    span {
+      color      : $orange;
+      font-weight: 600;
+    }
+  }
+}
+
+.searchInput {
+  position: relative;
+  padding : 0px !important;
+
+  &:after {
+    content    : "\f002";
+    font-family: 'Font Awesome 5 pro';
+    font-weight: 900;
+    display    : inline-block;
+    width      : 20px;
+    height     : 20px;
+    line-height: 20px;
+    text-align : center;
+    position   : absolute;
+    left       : 10px;
+    top        : 7px;
+    z-index    : 9;
+  }
+
+  .searchControl {
+    width       : 100%;
+    height      : 100%;
+    border      : 0px;
+    outline     : 0 none;
+    padding-left: 40px;
+  }
+
+}
+
+.cusCard {
+  display        : flex;
+  flex-direction : row;
+  flex-flow      : wrap;
+  justify-content: baseline;
+  margin-left    : -5px;
+  margin-right   : -5px;
+
+  .cardContent {
+    border-radius: 10px;
+    overflow     : hidden;
+    flex         : 1 0 20%;
+    max-width    : 25%;
+    background   : $lightblack;
+    box-sizing   : border-box;
+    margin       : 0 .5rem 1rem .5rem;
+
+    .cardImg {
+      position       : relative;
+      overflow       : hidden;
+      background     : url(https://i.stack.imgur.com/h6viz.gif) no-repeat center 0%;
+      min-height     : 170px;
+      background-size: 57%;
+
+      img {
+        display: block;
+        width  : 100%;
+      }
+    }
+
+    .imgDown {
+      position  : absolute;
+      bottom    : 0px;
+      left      : 0px;
+      padding   : 10px;
+      background: rgba(0, 0, 0, 0.57);
+      color     : $white;
+      width     : 100%;
+
+      ul {
+        padding   : 0px;
+        margin    : 0px;
+        list-style: none;
+        font-size : 0.8rem;
+
+        li {
+          padding: 0;
+
+          h5 {
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cusCardBody {
+  padding: .5rem;
+
+  overflow      : hidden;
+  padding-bottom: 1rem;
+
+  ul {
+    padding   : 0px;
+    margin    : 0px;
+    list-style: none;
+    font-size : 0.8rem;
+
+    li {
+      display        : flex;
+      flex-direction : row;
+      justify-content: space-between;
+      color          : $white;
+      border-bottom  : 1px solid $lightgray;
+      padding        : 8px 0;
+
+      &:last-child {
+        border-bottom: 0px;
+      }
+
+      span {}
+
+      span:nth-child(1) {
+        color         : $gray;
+        text-transform: uppercase;
+      }
+
+      span:nth-child(2) {
+        display   : flex;
+        text-align: right;
+        color     : $orange;
+
+      }
+    }
+  }
+}
+
+
+footer {
+  margin-top: 30px;
+  padding   : 10px 0;
+  width     : 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
+
+  a {
+    color: $white !important;
+  }
+
+  .ecart-footer {
+    display              : flex;
+    -webkit-box-orient   : horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction   : row;
+    flex-direction       : row;
+    -webkit-box-pack     : justify;
+    -ms-flex-pack        : justify;
+    justify-content      : space-between;
+    font-size            : 13px;
+  }
+}
+
+
+
+@media(min-width:767px) and (max-width:991px) {
+  .cusCard {
+    .cardContent {
+      flex     : 1 0 25%;
+      max-width: 31%;
+    }
+  }
+}
+
+
+@media(max-width:767px) {
+  .mobRow {
+    margin-left : -10px;
+    margin-right: -10px;
+  }
+
+  .cusCard {
+    margin-left : -3px;
+    margin-right: -3px;
+
+    .cardContent {
+      flex         : 1 0 40%;
+      max-width    : 51%;
+      margin       : 0 .2rem 1rem .2rem;
+      border-radius: 3px;
+
+      .cardImg {
+        min-height: 150px;
+      }
+    }
+
+    .imgDown {
+      padding: 5px 3px !important;
+
+      ul {
+        li {
+          h5 {
+            font-size    : .9rem;
+            font-weight  : 500 !important;
+            margin-bottom: .1rem;
+
+          }
+
+          span {
+            //display: block;
+            font-size: .7rem;
+          }
+        }
+      }
+    }
+
+    .cusCardBody {
+      ul {
+        li {
+          flex-direction: column !important;
+          padding       : 4px 0;
+
+          span {
+            display   : block;
+            width     : 100%;
+            text-align: left !important;
+          }
+        }
+      }
+    }
+  }
+}
